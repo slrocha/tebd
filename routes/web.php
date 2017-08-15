@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('pedido', 'PedidoController');
+Route::resource('item', 'ItemController');
