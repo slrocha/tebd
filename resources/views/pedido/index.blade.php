@@ -45,12 +45,12 @@
 @section('content')
 <div class="container-fluid">
   <form class="form-horizontal" method="get" action="{!!URL::route('pedido.consultarPedido')!!}">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
 
     <div class="form-group">
 	    <div class="input-group">
 	      <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-	      <input id="pesquisar" type="text" class="form-control" name="pesquisar" placeholder="Pesquisar pelo ID">
+	      <input id="pesquisar" type="text" class="form-control" name="pedido_id" placeholder="Pesquisar pelo ID">
 	    </div>
 	</div>    
     <div class="form-group">

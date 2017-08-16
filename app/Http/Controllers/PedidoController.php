@@ -26,7 +26,7 @@ class PedidoController extends Controller
     }
 
     public function pesquisar (Request $request){
-        oi;
+        dd($request);
 
     }
 
@@ -48,11 +48,15 @@ class PedidoController extends Controller
 
     public function show(Pedido $pedido)
     {
-        oi;
+        dd($pedido);
     }
 
-    public function consultarPedido(){
-        return view ('pedido.consultarPedido');
+    public function consultarPedido(Request $request){
+        
+        $pedido = Pedido::find($request->pedido_id);
+                dd($pedido);
+
+        // return view ('pedido.consultarPedido');
     }
 
     

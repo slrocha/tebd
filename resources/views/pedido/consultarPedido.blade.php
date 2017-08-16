@@ -35,7 +35,7 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="{{ URL::to('pedido/create') }}">Adicionar Pedido</a></li>
-          <li><a href="{{ URL::to('consultarPedido') }}">Consultar Pedido</a></li>
+          <li><a href="{{ URL::to('pedido') }}">Consultar Pedido</a></li>
           <li><a href="{{ URL::to('pedido/removerPedido') }}">Remover Pedido</a></li>
         </ul>
       </li>
@@ -44,12 +44,12 @@
 </nav>
 @section('content')
 <div class="container-fluid">
-  <form class="form-horizontal" method="post" action="{!!URL::route('pedido.consultarPedido')!!}">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+  <form class="form-horizontal" method="get" action="{!!URL::route('pedido.consultarPedido')!!}">
+    <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-      <input id="pesquisar" type="text" class="form-control" name="pesquisar" placeholder="Pesquisar pelo ID">
+      <input id="pesquisar" type="text" class="form-control" name="pedido_id" placeholder="Pesquisar pelo ID">
     </div>
     <div class="form-group">
       <div class="col-md-offset-2">

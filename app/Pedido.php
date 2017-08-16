@@ -8,6 +8,7 @@ class Pedido extends Model
 {
 
 	protected $fillable = ['descricao'];
+	// protected $table = ''
 
     public function itens(){
     	return $this->belongsTo(Item::Class);
