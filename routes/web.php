@@ -16,4 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('pedido', 'PedidoController');
+
+Route::any('consultarPedido', 'PedidoController@consultarPedido');
+
 Route::resource('item', 'ItemController');

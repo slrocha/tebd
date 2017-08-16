@@ -29,11 +29,18 @@
       <li class="active"><a href="#">Atividades</a></li>
       <li><a href="">Documentação do Projeto</a></li>
       <li><a href="#">Estratégias</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pedido
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ URL::to('pedido/create') }}">Adicionar Pedido</a></li>
+          <li><a href="{{ URL::to('pedido/consultarPedido') }}">Consultar Pedido</a></li>
+          <li><a href="{{ URL::to('pedido/removerPedido') }}">Remover Pedido</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
-
-@extends('layouts.rodape')
 
 </body>
 </html>

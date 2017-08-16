@@ -13,15 +13,15 @@ class CreateItensTable extends Migration
      */
     public function up()
     {
-        Schema::create('itens', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descricao',30)->nullable();
             $table->decimal('valor',10,2)->nullable();
+            $table->integer('quantidade')->nullable();
             $table->integer('pedido_id')->unsigned();
 
             $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
-
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();   
         });
     }
 

@@ -44,7 +44,7 @@
 </nav>
 @section('content')
 <div class="container-fluid">
-  <form class="form-horizontal" method="post" action="{!!URL::route('pedido.index')!!}">
+  <form class="form-horizontal" method="get" action="{!!URL::route('pedido.show')!!}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
     <div class="input-group">

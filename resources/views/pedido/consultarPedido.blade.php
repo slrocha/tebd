@@ -35,7 +35,7 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="{{ URL::to('pedido/create') }}">Adicionar Pedido</a></li>
-          <li><a href="{{ URL::to('pedido') }}">Consultar Pedido</a></li>
+          <li><a href="{{ URL::to('consultarPedido') }}">Consultar Pedido</a></li>
           <li><a href="{{ URL::to('pedido/removerPedido') }}">Remover Pedido</a></li>
         </ul>
       </li>
@@ -44,7 +44,7 @@
 </nav>
 @section('content')
 <div class="container-fluid">
-  <form class="form-horizontal" method="post" action="{!!URL::route('pedido.index')!!}">
+  <form class="form-horizontal" method="post" action="{!!URL::route('pedido.consultarPedido')!!}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
     <div class="input-group">
@@ -53,7 +53,7 @@
     </div>
     <div class="form-group">
       <div class="col-md-offset-2">
-        <button type="submit" class="btn btn-warning">Pesquisar Produto</button>
+        <button type="submit" class="btn btn-warning">Consultar Pedido</button>
       </div>
     </div>
   </form>

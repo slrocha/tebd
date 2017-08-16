@@ -3,81 +3,68 @@
 namespace App\Http\Controllers;
 
 use App\Pedido;
+use App\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+
 
 class PedidoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         return view ('pedido.index');
+                dd($request);
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        return View('pedido.create');
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        $savePedido = Pedido::create($input['Pedido']);
+        $pedido = $savePedido->orderby('created_at','DESC')->first();
+
+        $input['Item']['pedido_id'] =  $pedido->id;
+        Item::create($input['Item']);
+
+        // return redirect('user/login');
+
+        return ("Cadastrado com sucesso");
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Pedido  $pedido
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Pedido $pedido)
     {
-        //
+        oi;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Pedido  $pedido
-     * @return \Illuminate\Http\Response
-     */
+    public function consultarPedido(){
+        return view ('pedido.consultarPedido');
+    }
+
+    
     public function edit(Pedido $pedido)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pedido  $pedido
-     * @return \Illuminate\Http\Response
-     */
+   
     public function update(Request $request, Pedido $pedido)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Pedido  $pedido
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(Pedido $pedido)
     {
         //
