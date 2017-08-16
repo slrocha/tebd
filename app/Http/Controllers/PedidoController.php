@@ -25,6 +25,11 @@ class PedidoController extends Controller
 
     }
 
+    public function pesquisar (Request $request){
+        oi;
+
+    }
+
  
     public function store(Request $request)
     {
@@ -35,8 +40,6 @@ class PedidoController extends Controller
 
         $input['Item']['pedido_id'] =  $pedido->id;
         Item::create($input['Item']);
-
-        // return redirect('user/login');
 
         return ("Cadastrado com sucesso");
 

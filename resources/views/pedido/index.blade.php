@@ -44,15 +44,17 @@
 </nav>
 @section('content')
 <div class="container-fluid">
-  <form class="form-horizontal" method="post" action="{!!URL::route('pedido.index')!!}">
+  <form class="form-horizontal" method="get" action="{!!URL::route('pedido.consultarPedido')!!}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-      <input id="pesquisar" type="text" class="form-control" name="pesquisar" placeholder="Pesquisar pelo ID">
-    </div>
     <div class="form-group">
-      <div class="col-md-offset-2">
+	    <div class="input-group">
+	      <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+	      <input id="pesquisar" type="text" class="form-control" name="pesquisar" placeholder="Pesquisar pelo ID">
+	    </div>
+	</div>    
+    <div class="form-group">
+      <div class="col-md-12">
         <button type="submit" class="btn btn-warning">Pesquisar Produto</button>
       </div>
     </div>

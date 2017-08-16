@@ -35,7 +35,7 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="{{ URL::to('pedido/create') }}">Adicionar Pedido</a></li>
-          <li><a href="{{ URL::to('consultarPedido') }}">Consultar Pedido</a></li>
+          <li><a href="{{ URL::to('pedido') }}">Consultar Pedido</a></li>
           <li><a href="{{ URL::to('pedido/removerPedido') }}">Remover Pedido</a></li>
         </ul>
       </li>
