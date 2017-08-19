@@ -18,29 +18,32 @@
   #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
   </style>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">TEBD</a>
+<body>
+<hearder>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">TEBD</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Atividades</a></li>
+        <li><a href="">Documentação do Projeto</a></li>
+        <li><a href="#">Estratégias</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pedido
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ URL::to('pedido/create') }}">Adicionar Pedido</a></li>
+            <li><a href="{{ URL::to('pedido') }}">Consultar Pedido</a></li>
+            <li><a href="{{ URL::to('pedido/removerPedido') }}">Remover Pedido</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Atividades</a></li>
-      <li><a href="">Documentação do Projeto</a></li>
-      <li><a href="#">Estratégias</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pedido
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="{{ URL::to('pedido/create') }}">Adicionar Pedido</a></li>
-          <li><a href="{{ URL::to('pedido/consultarPedido') }}">Consultar Pedido</a></li>
-          <li><a href="{{ URL::to('pedido/removerPedido') }}">Remover Pedido</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
-
+  </nav>
+</hearder>  
+<section class="container-fluid">
+  @yield('content')
+</section>
 </body>
 </html>
