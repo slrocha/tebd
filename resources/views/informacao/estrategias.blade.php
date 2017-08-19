@@ -14,6 +14,7 @@
   <div class="well">
   	<strong>ORM - Object Relational Mapper</strong></br>
   	<p align="justify"> ORM é uma técnica de desenvolvimento de software que serve para o uso de tabelas de bancos de dados em formato de objetos relacionais, facilitando assim a manutenção de dados. Usando esta técnica o programador não precisa se preocupar em escrever códigos na linguagem SQL, pois a listagem e persistência é toda feita pela interface do ORM. Disponível em: <a href="http://clubedosgeeks.com.br/programacao/php/laravel-usando-o-orm-eloquent">Clube dos Geeks</a></p>
+  	<img src = "resources/images/ORMMapping.jpeg" width="50" height="100" />
   	 
   </div>
 
