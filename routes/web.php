@@ -21,3 +21,10 @@ Route::resource('pedido', 'PedidoController');
 // Route::get('pedido/pesquisar', 'PedidoController@pesquisar');
 
 Route::resource('item', 'ItemController');
+Route::get('informacao/atividades', 'InformacaoController@atividades')->name('informacao.atividades');
+Route::get('informacao/documentacao', 'InformacaoController@documentacao')->name('informacao.documentacao');
+Route::get('informacao/estrategias', 'InformacaoController@estrategias')->name('informacao.estrategias');
+
+
+Route::resource('informacao', 'InformacaoController');
+

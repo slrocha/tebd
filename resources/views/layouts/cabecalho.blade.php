@@ -23,14 +23,14 @@
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">TEBD</a>
+        <a class="navbar-brand" href="{{ URL::to('informacao') }}">TEBD</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Atividades</a></li>
-        <li><a href="">Documentação do Projeto</a></li>
-        <li><a href="#">Estratégias</a></li>
+        <li class="active"><a href="{{ URL::to('informacao/atividades') }}">Atividades</a></li>
+        <li><a href="{{ URL::to('informacao/documentacao') }}">Documentação do Projeto</a></li>
+        <li><a href="{{ URL::to('informacao/estrategias') }}">Estratégias</a></li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pedido
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Atividade de Nivelamento
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ URL::to('pedido/create') }}">Adicionar Pedido</a></li>
