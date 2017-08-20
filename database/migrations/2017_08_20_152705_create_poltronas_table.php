@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClientesTable extends Migration
+class CreatePoltronasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class CreateClientesTable extends Migration
      */
     public function up()
     {
-        //
+         Schema::create('poltronas', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('num_fila')->nullable();
+            $table->string('posicao_fila')->nullable();
+            $table->timestamps();   
+        });
     }
 
     /**
@@ -23,6 +28,7 @@ class CreateClientesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('poltronas');
+
     }
 }

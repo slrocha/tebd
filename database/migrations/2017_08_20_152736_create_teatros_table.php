@@ -13,7 +13,14 @@ class CreateTeatrosTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('teatros', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nome')->nullable();
+            $table->integer('id_poltrona')->unsigned();
+
+            $table->foreign('id_poltrona')->references('id')->on('poltronas')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,7 @@ class CreateTeatrosTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('teatros');
+
     }
 }

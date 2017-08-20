@@ -13,7 +13,14 @@ class CreateBilhetesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('bilhetes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->float('valor')->nullable();
+            $table->integer('id_espetaculo')->unsigned();
+
+            $table->foreign('id_espetaculo')->references('id')->on('espetaculos')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,7 @@ class CreateBilhetesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('bilhetes');
+
     }
 }
