@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('informacao.homeTebd');
 });
 
 Route::get('pedido/consultarPedido', 'PedidoController@consultarPedido')->name('pedido.consultarPedido');
