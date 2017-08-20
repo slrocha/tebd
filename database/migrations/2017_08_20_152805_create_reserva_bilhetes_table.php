@@ -18,11 +18,11 @@ class CreateReservaBilhetesTable extends Migration
             $table->integer('tempo_reserva')->nullable();
             $table->string('status')->nullable();
             $table->integer('forma_adquirir')->nullable();            
-            $table->integer('id_cliente')->unsigned();
-            $table->integer('id_bilhete')->unsigned();
+            $table->integer('cliente_id')->unsigned();
+            $table->integer('bilhete_id')->unsigned();
 
-            $table->foreign('id_cliente')->references('id')->on('clientes')->onDelete('cascade');
-            $table->foreign('id_bilhete')->references('id')->on('bilhetes')->onDelete('cascade');
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
+            $table->foreign('bilhete_id')->references('id')->on('bilhetes')->onDelete('cascade');
             $table->timestamps();
         });
     }

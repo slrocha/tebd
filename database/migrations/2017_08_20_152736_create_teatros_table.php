@@ -16,9 +16,9 @@ class CreateTeatrosTable extends Migration
         Schema::create('teatros', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome')->nullable();
-            $table->integer('id_poltrona')->unsigned();
+            $table->integer('poltrona_id')->unsigned();
 
-            $table->foreign('id_poltrona')->references('id')->on('poltronas')->onDelete('cascade');
+            $table->foreign('poltrona_id')->references('id')->on('poltronas')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -20,9 +20,9 @@ class CreateClientesTable extends Migration
             $table->string('dt_nascimento')->nullable();
             $table->string('telefone')->nullable();
             $table->char('is_vip', 2); 
-            $table->integer('id_endereco')->unsigned();
+            $table->integer('endereco_id')->unsigned();
 
-            $table->foreign('id_endereco')->references('id')->on('enderecos')->onDelete('cascade');
+            $table->foreign('endereco_id')->references('id')->on('enderecos')->onDelete('cascade');
             $table->timestamps();   
         });
     }

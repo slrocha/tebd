@@ -16,9 +16,9 @@ class CreateEspetaculosTable extends Migration
         Schema::create('espetaculos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome')->nullable();
-            $table->integer('id_teatro')->unsigned();
+            $table->integer('teatro_id')->unsigned();
 
-            $table->foreign('id_teatro')->references('id')->on('teatros')->onDelete('cascade');
+            $table->foreign('teatro_id')->references('id')->on('teatros')->onDelete('cascade');
             $table->timestamps();
         });
     }

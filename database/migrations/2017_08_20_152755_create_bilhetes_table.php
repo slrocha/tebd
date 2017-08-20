@@ -16,9 +16,9 @@ class CreateBilhetesTable extends Migration
         Schema::create('bilhetes', function (Blueprint $table) {
             $table->increments('id');
             $table->float('valor')->nullable();
-            $table->integer('id_espetaculo')->unsigned();
+            $table->integer('espetaculo_id')->unsigned();
 
-            $table->foreign('id_espetaculo')->references('id')->on('espetaculos')->onDelete('cascade');
+            $table->foreign('espetaculo_id')->references('id')->on('espetaculos')->onDelete('cascade');
             $table->timestamps();
         });
     }
