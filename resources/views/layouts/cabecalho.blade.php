@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html><!-- 
 <head>
   <title>TEBD</title>
   <meta charset="utf-8">
@@ -18,7 +18,7 @@
   #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
   #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
   </style>
-</head>
+</head> -->
 <body>
 <hearder>
   <nav class="navbar navbar-inverse">
