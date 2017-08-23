@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEspetaculosTable extends Migration
+class CreateTeatrosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateEspetaculosTable extends Migration
      */
     public function up()
     {
-        Schema::create('espetaculos', function (Blueprint $table) {
+        Schema::create('teatros', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome')->nullable();
-            $table->integer('teatro_id')->unsigned();
+            $table->integer('poltrona_id')->unsigned();
+            $table->integer('programacao_id')->unsigned();
 
-            $table->foreign('teatro_id')->references('id')->on('teatros')->onDelete('cascade');
+            $table->foreign('poltrona_id')->references('id')->on('poltronas')->onDelete('cascade');
+            $table->foreign('programacao_id')->references('id')->on('programacaos')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,7 +32,7 @@ class CreateEspetaculosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('espetaculos');
+        Schema::dropIfExists('teatros');
 
     }
 }
