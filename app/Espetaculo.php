@@ -17,5 +17,10 @@ class Espetaculo extends Model
 
 		return $this->belongsTo('App\Teatro');
 	}
+
+	public function programacao(){
+
+		return $this->belongsTo('App\Programacao');
+	}
  
 }

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html><!-- 
+<html>
 <head>
   <title>TEBD</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../../../../css/bootstrap.css">
+  <script src="../../../../js/jquery.min.js"></script>
+  <script src="../../../../js/bootstrap.min.js"></script>
   <style>
   body {
       position: relative; 
@@ -18,7 +18,7 @@
   #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
   #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
   </style>
-</head> -->
+</head>
 <body>
 <hearder>
   <nav class="navbar navbar-inverse">
