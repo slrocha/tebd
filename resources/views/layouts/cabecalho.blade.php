@@ -28,8 +28,24 @@
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{ URL::to('informacao/atividades') }}">Atividades</a></li>
-        <li><a href="{{ URL::to('informacao/documentacao') }}">Documentação do Projeto</a></li>
-        <li><a href="{{ URL::to('informacao/estrategias') }}">Estratégias</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Documentação do Projeto
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ URL::to('informacao/documentacao') }}">Etapa 1</a></li>
+            <li><a href="#">Etapa 2</a></li>
+            <li><a href="#">Etapa 3</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Estratégias
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ URL::to('informacao/estrategias') }}">Etapa 1</a></li>
+            <li><a href="#">Etapa 2</a></li>
+            <li><a href="#">Etapa 3</a></li>
+          </ul>
+        </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Atividade de Nivelamento
           <span class="caret"></span></a>
