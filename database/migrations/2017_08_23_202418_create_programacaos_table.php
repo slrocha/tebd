@@ -11,7 +11,7 @@ class CreateProgramacaosTable extends Migration
     {
         Schema::create('programacaos', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('data')->nullable();
+            $table->string('data')->nullable();
             $table->string('horario')->nullable();
             $table->integer('espetaculo_id')->unsigned();
 

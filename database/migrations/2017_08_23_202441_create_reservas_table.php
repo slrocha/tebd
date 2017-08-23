@@ -16,8 +16,8 @@ class CreateReservasTable extends Migration
         Schema::create('reserva_bilhetes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('tempo_reserva')->nullable();
-            $table->string('status')->nullable();
-            $table->integer('forma_adquirir')->nullable();            
+            $table->integer('status')->nullable();
+            $table->string('forma_adquirir')->nullable();            
             $table->integer('cliente_id')->unsigned();
             $table->integer('bilhete_id')->unsigned();
 
