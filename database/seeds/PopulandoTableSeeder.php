@@ -8,6 +8,7 @@ use App\Teatro;
 use App\Bilhete;
 use App\ReservaBilhete;
 use App\Espetaculo;
+use App\TeatroPrograPoltro;
 use Illuminate\Database\Seeder;
 
 
@@ -21,6 +22,14 @@ class PopulandoTableSeeder extends Seeder
     public function run()
     {
         $count = 0;
+
+        $teatro = Teatro::firstOrNew([
+        		'nome' => str_random(10),
+        		'endereco' => str_random(10)
+        	]);
+        	
+        	$teatro->save();
+        	$teatro_id = $teatro->id;
         
         while ($count != 500000){
         	$endereco = Endereco::firstOrNew([
@@ -89,16 +98,16 @@ class PopulandoTableSeeder extends Seeder
         	$reserva->save();
         	$reserva_id = $reserva->id;
 
-        }
-
-        $teatro = Teatro::firstOrNew([
-        		'nome' => str_random(10),
-        		'poltrona_id' => $poltrona_id,
-        		'programacao_id' => $programacao_id
+        	$teatroProgrPoltro = TeatroPrograPoltro::firstOrNew([
+        		'teatro_id' => $teatro_id,
+        		'poltrona_id' =>  $poltrona_id,
+        		'programacao_id' =>  $programacao_id
         	]);
         	
-        	$teatro->save();
-        	$teatro_id = $teatro->id;
+        	$teatroProgrPoltro->save();
+        }
+
+        
 
         $count++;
     }

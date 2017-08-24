@@ -6,15 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teatro extends Model
 {
-    protected $fillable = ['nome','id_poltrona'];
+    protected $fillable = ['nome','endereco'];
 
- 	public function poltronas(){
+    public function poltronas(){
 
-		return $this->hasMany('App\Poltrona');
+		return $this->belongsTo('App\Poltrona');
 	}
 
 	public function espetaculos(){
 
-		return $this->hasMany('App\Espetaculo');
+		return $this->belongsTo('App\Espetaculo');
 	}
+
+ 	
 }
