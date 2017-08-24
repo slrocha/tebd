@@ -23,7 +23,7 @@ class ProgramacaoController extends Controller
      */
     public function create()
     {
-        //
+        return view('programacao.create');
     }
 
     /**
