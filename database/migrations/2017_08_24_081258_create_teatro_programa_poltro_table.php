@@ -13,7 +13,7 @@ class CreateTeatroProgramaPoltroTable extends Migration
      */
     public function up()
     {
-        Schema::create('teatro_poltro_progrs', function (Blueprint $table) {
+        Schema::create('teatro_progra_poltros', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('teatro_id')->unsigned();
             $table->integer('poltrona_id')->unsigned();
@@ -35,7 +35,7 @@ class CreateTeatroProgramaPoltroTable extends Migration
     public function down()
     {
         
-        Schema::dropIfExists('teatro_poltro_progrs');
+        Schema::dropIfExists('teatro_progra_poltros');
     }
 }
  
