@@ -22,7 +22,7 @@ class PopulandoTableSeeder extends Seeder
     {
         $count = 0;
         
-        while ($count != 2){
+        while ($count != 500000){
         	$endereco = Endereco::firstOrNew([
         		'cidade' => str_random(10),
         		'bairro' => str_random(10), 
@@ -35,9 +35,9 @@ class PopulandoTableSeeder extends Seeder
 
         	$cliente = Cliente::firstOrNew([
         		'nome' => str_random(10),
-        		'cpf' => $count.$count.$count.'.'.$count.$count.$count.'.'.$count.$count.$count.'-'.$count.$count, 
+        		'cpf' => rand(0, 9).rand(0, 9).rand(0, 9).'.'.rand(0, 9).rand(0, 9).rand(0, 9).'.'.rand(0, 9).rand(0, 9).rand(0, 9).'-'.rand(0, 9).rand(0, 9),
         		'dt_nascimento'	=> rand(1, 31).'/'.rand(1, 12).'/'.rand(1900, 2017), 
-        		'telefone'	=> rand(), 
+        		'telefone'	=> '9'.'-'.rand(9, 8).rand(0, 9).rand(0, 9).rand(0, 9).'-'.rand(0, 9).rand(0, 9).rand(0, 9).rand(0, 9), 
         		'is_vip'	=> rand(0, 1),
         		'endereco_id' => $endereco_id
         	]);   	
