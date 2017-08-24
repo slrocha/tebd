@@ -110,5 +110,6 @@ class PopulandoTableSeeder extends Seeder
         
 
         $count++;
+        echo "...";
     }
 }
