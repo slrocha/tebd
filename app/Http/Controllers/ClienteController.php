@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Endereco;
+use App\Cliente;
+use Illuminate\Support\Facades\DB;
+
 
 class ClienteController extends Controller
 {
@@ -23,7 +27,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('cliente.create');
     }
 
     /**
@@ -34,7 +38,33 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $saveEndereco = false;
+        $saveCliente = false;
+
+
+        DB::beginTransaction();
+
+            $saveEndereco = new Endereco();
+            $saveEndereco = $input['Endereco'];
+            $saveEndereco->save();
+            $saveEndereco = true;
+            $endereco_id = $saveEndereco->id;
+
+            if ($saveEndereco != false){
+                $saveCliente = new Cliente();
+                $saveCliente = $input['Cliente'];
+                dd($saveCliente);
+                $saveCliente->save();
+                $cliente_id = $saveCliente->id;
+
+                }
+            $pedido = $savePedido->orderby('created_at','DESC')->first();
+
+            $input['Item']['pedido_id'] =  $pedido->id;
+            Item::create($input['Item']);
+
+            return ("Cadastrado com sucesso");
     }
 
     /**

@@ -28,9 +28,6 @@ Route::get('informacao/documentacao', 'InformacaoController@documentacao')->name
 Route::get('informacao/estrategias', 'InformacaoController@estrategias')->name('informacao.estrategias');
 Route::resource('informacao', 'InformacaoController');
 
-Route::resource('programacao', 'ProgramacaoController');
-
-
 Route::resource('bilhete', 'BilheteController');
 Route::resource('cliente', 'CLienteController');
 Route::resource('endereco', 'EnderecoController');

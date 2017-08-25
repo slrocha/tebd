@@ -31,7 +31,7 @@ class PopulandoTableSeeder extends Seeder
         	$teatro->save();
         	$teatro_id = $teatro->id;
         
-        while ($count != 500000){
+        while ($count != 100){
         	$endereco = Endereco::firstOrNew([
         		'cidade' => str_random(10),
         		'bairro' => str_random(10), 
@@ -108,8 +108,7 @@ class PopulandoTableSeeder extends Seeder
         }
 
         
-
-        $count++;
-        echo "...";
+ 		echo "...";
+        $count++;       
     }
 }
