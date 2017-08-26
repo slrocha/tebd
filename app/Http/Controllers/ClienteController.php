@@ -66,7 +66,7 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($id);
         $endereco = $cliente->endereco()->get();
-        return view('cliente.show', ['clientes' => $cliente, 'enderecos' => $endereco]);
+        return view('cliente.show', ['cliente' => $cliente, 'enderecos' => $endereco]);
     }
 
     /**

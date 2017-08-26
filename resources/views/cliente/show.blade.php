@@ -4,7 +4,6 @@
   <form class="form-horizontal" method="#" action="#">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     
-  @foreach($clientes as $cliente)
     <h1>Cliente</h1>
     <div class="form-group">
       <label class="col-sm-2 control-label">Nome</label>
@@ -42,7 +41,6 @@
       @endif  
       </div>
     </div>
-  @endforeach  
   
     <hr />
     <h2>Endereço</h2>
@@ -71,7 +69,7 @@
     </div>
     <div class="form-group">
       <div class="col-md-offset-2">
-        <a href="{{ URL::to('cliente/index') }}" class="btn btn-primary">Início</a>
+        <a href="{{ URL::to('cliente') }}" class="btn btn-primary">Início</a>
       </div>
     </div>
   @endforeach  
