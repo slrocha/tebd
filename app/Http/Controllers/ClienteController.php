@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Endereco;
 use App\Cliente;
 use Illuminate\Support\Facades\DB;
+// use App\Http\Requests\ClienteStoreRequest;
 
 
 
@@ -23,7 +24,7 @@ class ClienteController extends Controller
         return view('cliente.create');
     }
 
-    public function store(ClienteStoreRequest $request)
+    public function store(Request $request)
     {
         $input = $request->all();
         $saveEndereco = false;
@@ -47,7 +48,7 @@ class ClienteController extends Controller
                 $cliente_id = $saveCliente->id;
 
             }else {
-                return redirect ('cliente.create')->with('status', 'Cadastro não pode ser concluído');
+                return redirect ('cliente/create')->with('status', 'Cadastro não pode ser concluído');
             }
 
         DB::commit();
@@ -55,7 +56,7 @@ class ClienteController extends Controller
 
         } catch (\Exception $e) {
             DB::rollback();
-            return redirect ('cliente.create')->with('status', 'Cadastro não pode ser concluído');
+            return redirect ('cliente/create')->with('status', 'Cadastro não pode ser concluído');
         }
 
     }
@@ -64,7 +65,7 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($id);
         $endereco = $cliente->endereco()->get();
-        return view('cliente.show', ['cliente' => $cliente, 'endereco' => $endereco]);
+        return view('cliente.show', ['clientes' => $cliente, 'enderecos' => $endereco]);
     }
 
     /**

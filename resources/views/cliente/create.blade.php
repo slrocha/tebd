@@ -32,7 +32,8 @@
     <div class="form-group">
       <label class="col-sm-2 control-label">Cliente VIP</label>
       <div class="col-sm-4">
-        <input type="checkbox" class="checkbox" name="Cliente[is_vip]"></input>
+        <input type="radio" name="1" value="other"> Sim  
+        <input type="radio" name="0" value="other"> Não      
       </div>
     </div>
   
