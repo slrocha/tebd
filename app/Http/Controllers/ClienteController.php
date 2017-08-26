@@ -16,7 +16,7 @@ class ClienteController extends Controller
     public function index()
     {
         $clientes = Cliente::all();
-        return redirect ('cliente.index', ['clientes' => $clientes]);
+        return view('cliente.index', ['clientes' => $clientes]);
     }
 
     public function create()

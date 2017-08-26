@@ -25,8 +25,12 @@
         <td>Sim</td>
     @else
         <td>Não</td>
+    @endif   
+    <td><a href="{{ URL::to('cliente/index') }}" class="btn btn-warning">Editar</a></td> 
+    <td><a href="{{ URL::to('cliente/index') }}" class="btn btn-danger">Deletar</a></td> 
       </tr>
     </tbody>
     @endforeach
   </table>
 </div>
+@stop('content')
