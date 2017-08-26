@@ -1,6 +1,9 @@
 
 @extends('layouts.cabecalho')
 @section('content')
+@if(Session::has('message'))
+  <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+@endif
   <form class="form-horizontal" method="POST" action="{!!URL::route('cliente.store')!!}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="Cliente[endereco_id]">

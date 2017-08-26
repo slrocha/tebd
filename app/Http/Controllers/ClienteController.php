@@ -29,7 +29,7 @@ class ClienteController extends Controller
         $input = $request->all();
         $saveEndereco = false;
         $saveCliente = false;
-
+        dd($input);
 
         DB::beginTransaction();
 
@@ -44,6 +44,7 @@ class ClienteController extends Controller
             if ($saveEndereco != false){
                 $saveCliente = new Cliente();
                 $saveCliente->fill($input['Cliente']);
+                dd($saveCliente);
                 $saveCliente->save();
                 $cliente_id = $saveCliente->id;
 
