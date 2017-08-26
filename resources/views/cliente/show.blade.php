@@ -74,6 +74,7 @@
         <a href="{{ URL::to('cliente/index') }}" class="btn btn-primary">Início</a>
       </div>
     </div>
+  @endforeach  
   </form>  
 @stop('content')
 
