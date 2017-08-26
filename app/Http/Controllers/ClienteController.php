@@ -8,35 +8,22 @@ use App\Cliente;
 use Illuminate\Support\Facades\DB;
 
 
+
 class ClienteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-        //
+        $clientes = Cliente::all();
+        return redirect ('cliente.index', ['clientes' => $clientes]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('cliente.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(ClienteStoreRequest $request)
     {
         $input = $request->all();
         $saveEndereco = false;
@@ -45,34 +32,30 @@ class ClienteController extends Controller
 
         DB::beginTransaction();
 
+        try {
+            
             $saveEndereco = new Endereco();
-            $saveEndereco = $input['Endereco'];
+            $saveEndereco->fill($input['Endereco']);
             $saveEndereco->save();
             $saveEndereco = true;
             $endereco_id = $saveEndereco->id;
 
             if ($saveEndereco != false){
                 $saveCliente = new Cliente();
-                $saveCliente = $input['Cliente'];
-                dd($saveCliente);
+                $saveCliente->fill($input['Cliente']);
                 $saveCliente->save();
                 $cliente_id = $saveCliente->id;
 
-                }
-            $pedido = $savePedido->orderby('created_at','DESC')->first();
+            }
 
-            $input['Item']['pedido_id'] =  $pedido->id;
-            Item::create($input['Item']);
+        DB::commit();
 
-            return ("Cadastrado com sucesso");
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
