@@ -46,19 +46,25 @@ class ClienteController extends Controller
                 $saveCliente->save();
                 $cliente_id = $saveCliente->id;
 
+            }else {
+                return redirect ('cliente.create')->with('status', 'Cadastro não pode ser concluído');
             }
 
         DB::commit();
+            return redirect ('cliente.show', ['cliente_id' => $cliente_id]);
 
         } catch (\Exception $e) {
             DB::rollback();
+            return redirect ('cliente.create')->with('status', 'Cadastro não pode ser concluído');
         }
 
     }
 
     public function show($id)
     {
-        //
+        $cliente = Cliente::find($id);
+        $endereco = $cliente->endereco()->get();
+        return view('cliente.show', ['cliente' => $cliente, 'endereco' => $endereco]);
     }
 
     /**
