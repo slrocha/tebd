@@ -95,13 +95,13 @@ class ClienteController extends Controller
 
         try {
             
-            $endereco = Endereco::find($endereco_id);            
+            $endereco = Endereco::findOrFail($endereco_id);            
             $endereco->fill($input['Endereco']);
             $endereco->save();
             $endereco = true;
 
             if ($endereco != false){
-                $cliente = Cliente::find($id);
+                $cliente = Cliente::findOrFail($id);
                 $cliente->fill($input['Cliente']);
                 $cliente->save();
 
