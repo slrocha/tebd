@@ -49,7 +49,6 @@
     </div>
     <hr />
     <h2>Endereço</h2>
-  @foreach($enderecos as $key => $endereco)
     <input type="hidden" value="{{$endereco->id}}" name="Endereco[endereco_id]">
     <div class="form-group">
       <label class="col-sm-2 control-label">Cidade</label>
@@ -73,7 +72,6 @@
         <input class="form-control" value="{{$endereco->numero}}" name="Endereco[numero]"> </input>
       </div>
     </div>
-  @endforeach  
    
     <div class="form-group">
       <div class="col-md-offset-2">

@@ -64,7 +64,9 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($id);
         $endereco = $cliente->endereco()->get();
-        return view('cliente.show', ['cliente' => $cliente, 'enderecos' => $endereco]);
+        foreach ($endereco as $key => $value) {
+            return view('cliente.show', ['cliente' => $cliente, 'enderecos' => $value]);
+        }
     }
 
     
@@ -72,7 +74,9 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($id);
         $endereco = $cliente->endereco()->get();
-        return view('cliente.edit', ['cliente' => $cliente, 'enderecos' => $endereco]);   
+        foreach ($endereco as $key => $value) {
+            return view('cliente.edit', ['cliente' => $cliente, 'endereco' => $value]);   
+        }
     }
 
    
@@ -102,8 +106,10 @@ class ClienteController extends Controller
                 Session::flash('status', 'Cliente Atualizado!');
                 return Redirect::to('cliente');
             }else {
-                return view ('cliente.edit',['cliente_id' =>$id])->with('status', 'Cliente não atualizado.');
-            }
+                Session::flash('status', 'Cliente não Atualizado!');
+                return  Redirect::route('cliente.edit',array('cliente' => $cliente, 'endereco' => $endereco));
+          
+             }
 
         } catch (\Exception $e) {
             DB::rollback();
