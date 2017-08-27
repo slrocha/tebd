@@ -28,7 +28,7 @@
     <strong>Interface Web</strong></br>
     <p align="justify"> A interface Web de cliente e endereço foi desenvolvida para aplicação das ténicas de controle de transação. Foi implementado o CRUD de cliente. (falar sobre comandos especiais utilizados). 
   </p>
-    <a href="{{ URL::to('cliente/create') }}" class="btn btn-warning">Acessar Interface</a>
+    <a href="{{ URL::to('cliente') }}" class="btn btn-warning">Acessar Interface</a>
   </div>
 
    <div class="well">
