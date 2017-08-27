@@ -46,16 +46,19 @@ class ClienteController extends Controller
                 $saveCliente->save();
                 $cliente_id = $saveCliente->id;
 
+            DB::commit();
+                Session::flash('status', 'Cliente Cadastrado!');
+                return  Redirect::route('cliente.show', array('cliente_id' => $cliente_id));
+
             }else {
-                return redirect ('cliente/create')->with('status', 'Cadastro não pode ser concluído');
+                Session::flash('status', 'Cadastro não pode ser concluído!');
+                    return  Redirect::route('cliente.create');          
             }
-
-        DB::commit();
-            return redirect ('cliente.show', ['cliente_id' => $cliente_id]);
-
+            
         } catch (\Exception $e) {
             DB::rollback();
-            return redirect ('cliente/create')->with('status', 'Cadastro não pode ser concluído');
+            Session::flash('status', 'Cadastro não pode ser concluído!');
+                return  Redirect::route('cliente.create');
         }
 
     }
@@ -113,7 +116,8 @@ class ClienteController extends Controller
 
         } catch (\Exception $e) {
             DB::rollback();
-            return redirect ('cliente.edit', $id);
+            Session::flash('status', 'Cliente não Atualizado!');
+            return  Redirect::route('cliente.edit',array('cliente' => $cliente, 'endereco' => $endereco));       
         }
 
     }    
