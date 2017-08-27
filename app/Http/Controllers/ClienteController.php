@@ -29,7 +29,6 @@ class ClienteController extends Controller
         $input = $request->all();
         $saveEndereco = false;
         $saveCliente = false;
-        dd($input);
 
         DB::beginTransaction();
 
@@ -73,14 +72,46 @@ class ClienteController extends Controller
     public function edit($id)
     {
         $cliente = Cliente::find($id);
-        return view('cliente.edit', ['cliente' => $cliente]);
-    }
+        $endereco = $cliente->endereco()->get();
+        return view('cliente.edit', ['cliente' => $cliente, 'enderecos' => $endereco]);    }
 
    
     public function update(Request $request, $id)
     {
-        dd($request, $id);
+        
+        $input =  $request->all();
+        $input = $request->all();
+        $endereco = false;
+        $cliente = false;
+        $endereco_id = $input['Cliente']['endereco_id'];
+        DB::beginTransaction();
+
+        try {
+            
+            $endereco = Endereco::find($endereco_id);            
+            $endereco->fill($input['Endereco']);
+            $endereco->save();
+            $endereco = true;
+
+            if ($endereco != false){
+                $cliente = new Cliente($id);
+                $cliente->fill($input['Cliente']);
+                $cliente->save();
+                
+            DB::commit();
+            return redirect ('cliente.show', ['cliente_id' => $cliente_id]);
+
+            }else {
+                return redirect ('cliente/edit', $id)->with('status', 'Cliente não atualizado.');
+            }
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect ('cliente/create')->with('status', 'Cadastro não pode ser concluído');
+        }
+
     }
+    
 
  
     public function destroy($id)
