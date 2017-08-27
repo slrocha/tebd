@@ -36,6 +36,7 @@ class ClienteController extends Controller
             $saveEndereco = new Endereco();
             $saveEndereco->fill($input['Endereco']);
             if(!empty($saveEndereco)){
+                dd('entrei aki');
                 if ($saveEndereco->save()){
                 $endereco_id = $saveEndereco->id;
                 $saveCliente = new Cliente();
