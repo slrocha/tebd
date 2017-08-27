@@ -15,9 +15,7 @@ class ClienteController extends Controller
     public function index()
     {
         $clientes = Cliente::all();
-        foreach ($clientes as $key => $value) {
-            return view('cliente.index', ['cliente' => $value]);
-        }
+        return view('cliente.index', ['clientes' => $clientes]);
     }
 
     public function create()

@@ -13,7 +13,8 @@
 	<div class="col-md-offset-1" style="margin-left: 0;">
 	    <a href="{{ URL::to('cliente/create') }}" class="btn btn-primary">Cadastrar Cliente</a>
 	</div>
-</div> 
+</div>
+
   <table class="table table-hover">
     <thead>
       <tr>
@@ -24,6 +25,7 @@
         <th>Cliente VIP</th>
       </tr>
     </thead>
+   @foreach($clientes as $key => $cliente) 
     <tbody>
       <tr>
         <td>{{$cliente->nome}}</td>
@@ -39,6 +41,7 @@
      <td><a href="{{ route('cliente.destroy', $cliente->id) }}" data-toggle="modal" data-target="#myModal" class="btn btn-danger">Deletar</a></td> 
       </tr>
     </tbody>
+    @endforeach
   </table>
 
    <!-- Modal -->
