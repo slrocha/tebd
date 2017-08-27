@@ -41,12 +41,38 @@ $factory->define(App\Endereco::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Endereco::class, function ($faker) {
+$factory->define(App\Cliente::class, function ($faker) {
     return [
-        'cidade' => $faker->title,
-        'bairro' => $faker->paragraph,
-        'rua' => function () {
-            return factory(App\User::class)->create()->id;
+        'nome' => $faker->title,
+        'cpf' => $faker->title,
+        'dt_nascimento' => $faker->title,
+        'is_vip' => $faker->paragraph,
+        'endereco_id' => function () {
+            return factory(App\Endereco::class)->create()->id;
         }
     ];
 });
+
+$factory->define(App\Poltrona::class, function ($faker) {
+    return [
+        'num_fila' => $faker->randomDigitNotNull,
+        'posicao_fila' => $faker->bothify
+    ];
+});
+
+$factory->define(App\Espetaculo::class, function ($faker) {
+    return [
+        'nome' => $faker->name
+    ];
+});
+
+$factory->define(App\Programacao::class, function ($faker) {
+    return [
+        'data' => $faker->date($format = 'd/m/Y', $max = 'now'),
+        'horario' => $faker->time($format = 'H:i:s', $max = 'now'),
+        'espetaculo_id' => function () {
+            return factory(App\Espetaculo::class)->create()->id;
+        }
+    ];
+});
+
