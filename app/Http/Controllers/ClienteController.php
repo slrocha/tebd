@@ -15,7 +15,9 @@ class ClienteController extends Controller
     public function index()
     {
         $clientes = Cliente::all();
-        return view('cliente.index', ['clientes' => $clientes]);
+        foreach ($clientes as $key => $value) {
+            return view('cliente.index', ['cliente' => $value]);
+        }
     }
 
     public function create()
@@ -33,8 +35,8 @@ class ClienteController extends Controller
             
             $saveEndereco = new Endereco();
             $saveEndereco->fill($input['Endereco']);
-
-            if ($saveEndereco->save()){
+            if(!empty($saveEndereco)){
+                if ($saveEndereco->save()){
                 $endereco_id = $saveEndereco->id;
                 $saveCliente = new Cliente();
                 $input['Cliente']['endereco_id'] = $endereco_id;
@@ -42,19 +44,21 @@ class ClienteController extends Controller
                 $saveCliente->save();
                 $cliente_id = $saveCliente->id;
 
-                DB::commit();
+                    DB::commit();
                     Session::flash('status', 'Cliente Cadastrado!');
                     return  Redirect::route('cliente.show', array('cliente_id' => $cliente_id));
-            }else {
-                DB::rollback();
-                Session::flash('status', 'Cliente não Atualizado!');
-                return  Redirect::route('cliente.edit',array('cliente' => $saveCliente, 'endereco' => $saveEndereco));
-          
+                }else {
+                    DB::rollback();
+                    Session::flash('status', 'Cliente não Atualizado!');
+                    return  Redirect::route('cliente.edit',array('cliente' => $saveCliente, 'endereco' => $saveEndereco));          
+                }
+            }else{
+                Session::flash('status', 'Cliente não Cadastrado!');
+                    return  Redirect::route('cliente.create');
             }
 
         } catch (\Exception $e) {
             DB::rollback();
-            dd($e);
             Session::flash('status', 'Cadastro não pode ser concluído!');
                 return  Redirect::route('cliente.create');
         }
