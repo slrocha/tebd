@@ -9,6 +9,11 @@
 
 <div class="container">
   <h2>Cliente</h2>
+<div class="form-group">
+	<div class="col-md-offset-1" style="margin-left: 0;">
+	    <a href="{{ URL::to('cliente/create') }}" class="btn btn-primary">Cadastrar Cliente</a>
+	</div>
+</div>
   <table class="table table-hover">
     <thead>
       <tr>
