@@ -54,7 +54,7 @@ class ClienteController extends Controller
                 Session::flash('status', 'Cadastro não pode ser concluído!');
                     return  Redirect::route('cliente.create');          
             }
-            
+
         } catch (\Exception $e) {
             DB::rollback();
             Session::flash('status', 'Cadastro não pode ser concluído!');
@@ -125,6 +125,6 @@ class ClienteController extends Controller
  
     public function destroy($id)
     {
-        //
+        dd($id);
     }
 }

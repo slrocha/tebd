@@ -37,10 +37,29 @@
         <td>Não</td>
     @endif   
     <td><a href="{{route('cliente.edit', $cliente->id)}}" class="btn btn-warning">Editar</a></td> 
-    <td><a href="{{ URL::to('cliente/index') }}" class="btn btn-danger">Deletar</a></td> 
+     <td><a href="{{ route('cliente.destroy', $cliente->id) }}" data-toggle="modal" data-target="#myModal" class="btn btn-danger">Deletar</a></td> 
       </tr>
     </tbody>
     @endforeach
   </table>
+
+   <!-- Modal -->
+<form class="form-horizontal" method="DELETE" action="{{ route('cliente.destroy', $cliente->id) }}">
+<div class="modal fade" id="myModal" role="dialog">
+<div class="modal-dialog modal-sm">    
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>Deseja excluir?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+    </div>
+  </div>
+</form>   
+ 
 </div>
 @stop('content')
