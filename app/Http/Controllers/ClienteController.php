@@ -35,9 +35,7 @@ class ClienteController extends Controller
             
             $saveEndereco = new Endereco();
             $saveEndereco->fill($input['Endereco']);
-            if(!empty($saveEndereco)){
-                dd('entrei aki');
-                if ($saveEndereco->save()){
+            if ($saveEndereco->save()){
                 $endereco_id = $saveEndereco->id;
                 $saveCliente = new Cliente();
                 $input['Cliente']['endereco_id'] = $endereco_id;
@@ -45,17 +43,13 @@ class ClienteController extends Controller
                 $saveCliente->save();
                 $cliente_id = $saveCliente->id;
 
-                    DB::commit();
-                    Session::flash('status', 'Cliente Cadastrado!');
-                    return  Redirect::route('cliente.show', array('cliente_id' => $cliente_id));
-                }else {
-                    DB::rollback();
-                    Session::flash('status', 'Cliente não Atualizado!');
-                    return  Redirect::route('cliente.edit',array('cliente' => $saveCliente, 'endereco' => $saveEndereco));          
-                }
-            }else{
+                DB::commit();
+                Session::flash('status', 'Cliente Cadastrado!');
+                return  Redirect::route('cliente.show', array('cliente_id' => $cliente_id));
+            }else {
+                DB::rollback();
                 Session::flash('status', 'Cliente não Cadastrado!');
-                    return  Redirect::route('cliente.create');
+                    return  Redirect::route('cliente.create');        
             }
 
         } catch (\Exception $e) {
@@ -68,9 +62,9 @@ class ClienteController extends Controller
     public function show($id)
     {
         $cliente = Cliente::find($id);
-        $endereco = $cliente->endereco()->get();
+        $endereco = Endereco::where('id', $cliente->endereco_id)->get();
         foreach ($endereco as $key => $value) {
-            return view('cliente.show', ['cliente' => $cliente, 'enderecos' => $value]);
+            return view('cliente.show', ['cliente' => $cliente, 'endereco' => $value]);
         }
     }
 
@@ -78,8 +72,7 @@ class ClienteController extends Controller
     public function edit($id)
     {
         $cliente = Cliente::find($id);       
-        $endereco = $cliente->endereco()->get();
-         // dd($endereco);
+        $endereco = Endereco::where('id', $cliente->endereco_id)->get();
         foreach ($endereco as $key => $value) {
             return view('cliente.edit', ['cliente' => $cliente, 'endereco' => $value]);   
         }
