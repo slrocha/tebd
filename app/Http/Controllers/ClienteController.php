@@ -26,8 +26,8 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $saveEndereco = false;
-        $saveCliente = false;
+        // $saveEndereco = false;
+        // $saveCliente = false;
 
         DB::beginTransaction();
 
@@ -36,31 +36,25 @@ class ClienteController extends Controller
             $saveEndereco = new Endereco();
             $saveEndereco->fill($input['Endereco']);
             $saveEndereco->save();
-            $saveEndereco = true;
             $endereco_id = $saveEndereco->id;
 
-            if ($saveEndereco != false){
-                $saveCliente = new Cliente();
-                $saveCliente->fill($input['Cliente']);
-                dd($saveCliente);
-                $saveCliente->save();
-                $cliente_id = $saveCliente->id;
+            
+            $saveCliente = new Cliente();
+            $input['Cliente']['endereco_id'] = $endereco_id;
+            $saveCliente->fill($input['Cliente']);
+            $saveCliente->save();
+            $cliente_id = $saveCliente->id;
 
             DB::commit();
                 Session::flash('status', 'Cliente Cadastrado!');
                 return  Redirect::route('cliente.show', array('cliente_id' => $cliente_id));
 
-            }else {
-                Session::flash('status', 'Cadastro não pode ser concluído!');
-                    return  Redirect::route('cliente.create');          
-            }
-
         } catch (\Exception $e) {
             DB::rollback();
+            dd($e);
             Session::flash('status', 'Cadastro não pode ser concluído!');
                 return  Redirect::route('cliente.create');
         }
-
     }
 
     public function show($id)

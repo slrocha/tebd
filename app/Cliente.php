@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cliente extends Model
 {
-    protected $fillable = ['nome', 'cpf', 'dt_nascimento', 'telefone', 	'is_vip', 'id_endereco'];
+    protected $fillable = ['nome', 'cpf', 'dt_nascimento', 'telefone', 	'is_vip', 'endereco_id'];
 
     public function reservas(){
 

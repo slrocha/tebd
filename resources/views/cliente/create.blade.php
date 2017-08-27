@@ -37,8 +37,8 @@
     <div class="form-group">
       <label class="col-sm-2 control-label">Cliente VIP</label>
       <div class="col-sm-4">
-        <input type="radio" name="1" value="other"> Sim  
-        <input type="radio" name="0" value="other"> Não      
+        <input type="radio" name="Cliente[is_vip]" value="1" checked="checked"> Sim  
+        <input type="radio" name="Cliente[is_vip]" value="0"> Não      
       </div>
     </div>
   

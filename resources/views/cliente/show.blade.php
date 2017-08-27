@@ -49,7 +49,6 @@
   
     <hr />
     <h2>Endereço</h2>
-  @foreach($enderecos as $key => $endereco)
     <div class="form-group">
       <label class="col-sm-2 control-label">Cidade</label>
       <div class="col-sm-4">
@@ -76,8 +75,7 @@
       <div class="col-md-offset-2">
         <a href="{{ URL::to('cliente') }}" class="btn btn-primary">Início</a>
       </div>
-    </div>
-  @endforeach  
+    </div>  
   </form>  
 @stop('content')
 
