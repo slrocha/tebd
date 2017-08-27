@@ -26,28 +26,31 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        // $saveEndereco = false;
-        // $saveCliente = false;
-
+  
         DB::beginTransaction();
 
         try {
             
             $saveEndereco = new Endereco();
             $saveEndereco->fill($input['Endereco']);
-            $saveEndereco->save();
-            $endereco_id = $saveEndereco->id;
 
-            
-            $saveCliente = new Cliente();
-            $input['Cliente']['endereco_id'] = $endereco_id;
-            $saveCliente->fill($input['Cliente']);
-            $saveCliente->save();
-            $cliente_id = $saveCliente->id;
+            if ($saveEndereco->save()){
+                $endereco_id = $saveEndereco->id;
+                $saveCliente = new Cliente();
+                $input['Cliente']['endereco_id'] = $endereco_id;
+                $saveCliente->fill($input['Cliente']);
+                $saveCliente->save();
+                $cliente_id = $saveCliente->id;
 
-            DB::commit();
-                Session::flash('status', 'Cliente Cadastrado!');
-                return  Redirect::route('cliente.show', array('cliente_id' => $cliente_id));
+                DB::commit();
+                    Session::flash('status', 'Cliente Cadastrado!');
+                    return  Redirect::route('cliente.show', array('cliente_id' => $cliente_id));
+            }else {
+                DB::rollback();
+                Session::flash('status', 'Cliente não Atualizado!');
+                return  Redirect::route('cliente.edit',array('cliente' => $saveCliente, 'endereco' => $saveEndereco));
+          
+            }
 
         } catch (\Exception $e) {
             DB::rollback();
@@ -69,8 +72,9 @@ class ClienteController extends Controller
     
     public function edit($id)
     {
-        $cliente = Cliente::find($id);
+        $cliente = Cliente::find($id);       
         $endereco = $cliente->endereco()->get();
+         // dd($endereco);
         foreach ($endereco as $key => $value) {
             return view('cliente.edit', ['cliente' => $cliente, 'endereco' => $value]);   
         }
@@ -81,7 +85,6 @@ class ClienteController extends Controller
     {
         
         $input =  $request->all();
-        $input = $request->all();
         $endereco = false;
         $cliente = false;
         $endereco_id = $input['Endereco']['endereco_id'];
@@ -91,18 +94,19 @@ class ClienteController extends Controller
             
             $endereco = Endereco::findOrFail($endereco_id);            
             $endereco->fill($input['Endereco']);
-            $endereco->save();
+            $endereco->update();
             $endereco = true;
 
             if ($endereco != false){
                 $cliente = Cliente::findOrFail($id);
                 $cliente->fill($input['Cliente']);
-                $cliente->save();
+                $cliente->update();
 
             DB::commit();
                 Session::flash('status', 'Cliente Atualizado!');
                 return Redirect::to('cliente');
             }else {
+                DB::rollback();
                 Session::flash('status', 'Cliente não Atualizado!');
                 return  Redirect::route('cliente.edit',array('cliente' => $cliente, 'endereco' => $endereco));
           

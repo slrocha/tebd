@@ -40,9 +40,9 @@
       <div class="col-sm-4">
       @if($cliente->is_vip == 1)  
         <input type="radio" name="Cliente[is_vip]" value="{{$cliente->is_vip}}" checked="checked"> Sim  
-        <input type="radio" name="Cliente[is_vip]" > Não   
+        <input type="radio" name="Cliente[is_vip]" value="0" > Não   
       @else
-        <input type="radio" name="Cliente[is_vip]"> Sim  
+        <input type="radio" name="Cliente[is_vip]" value="1" > Sim  
         <input type="radio" name="Cliente[is_vip]" value="{{$cliente->is_vip}}" checked="checked"> Não 
       @endif  
       </div>
