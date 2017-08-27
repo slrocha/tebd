@@ -38,7 +38,7 @@
         <td>Não</td>
     @endif   
     <td><a href="{{route('cliente.edit', $cliente->id)}}" class="btn btn-warning">Editar</a></td> 
-     <td><a href="{{ route('cliente.destroy', $cliente->id) }}" data-toggle="modal" data-target="#myModal" class="btn btn-danger">Deletar</a></td> 
+     <td><a href="{{ URL::to('cliente/destroy'. $cliente->id) }}" data-method="delete" data-toggle="modal" data-target="#myModal" class="btn btn-danger">Excluir</a></td> 
       </tr>
     </tbody>
     @endforeach
@@ -46,6 +46,7 @@
 
    <!-- Modal -->
 <form class="form-horizontal" method="DELETE" action="{{ route('cliente.destroy', $cliente->id) }}">
+<input name="_method" type="hidden" value="DELETE">
 <div class="modal fade" id="myModal" role="dialog">
 <div class="modal-dialog modal-sm">    
   <!-- Modal content-->
