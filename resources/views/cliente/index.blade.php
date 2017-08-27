@@ -38,7 +38,7 @@
         <td>Não</td>
     @endif   
     <td><a href="{{route('cliente.edit', $cliente->id)}}" class="btn btn-warning">Editar</a></td> 
-     <td><a href="{{ URL::to('cliente/destroy'. $cliente->id) }}" data-method="delete" data-toggle="modal" data-target="#myModal" class="btn btn-danger">Excluir</a></td> 
+     <td><a href="{{ URL::to('cliente/destroy/'. $cliente->id) }}" data-method="delete" data-toggle="modal" data-target="#myModal" class="btn btn-danger">Excluir</a></td> 
       </tr>
     </tbody>
     @endforeach
@@ -61,7 +61,6 @@
       <button type="submit" class="btn btn-danger" data-dismiss="modal">Excluir</button>
     </div>
   </div>
-</form>   
- 
+</form> 
 </div>
 @stop('content')

@@ -5,8 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../../../css/bootstrap-dialog.css">
+  <link rel="stylesheet" href="../../../../css/bootstrap-dialog.min.css">
   <script src="../../../../js/jquery.min.js"></script>
   <script src="../../../../js/bootstrap.min.js"></script>
+  <script src="../../../../js/bootstrap-dialog.min.js"></script>
+  <script src="../../../../js/bootstrap-dialog.js"></script>
   <style>
   body {
       position: relative; 
