@@ -5,12 +5,12 @@
   <div class="jumbotron">
     <h2>Atividades Realizadas</h2> </br>
   </div>
-  <p>Abaixo segue a relação das atividades executadas por cada componente do grupo ao longo do desenvolvimento do projeto:</p>                  
+  <p>Segue abaixo a relação das atividades realizadas pelos componentes da equipe ao longo do desenvolvimento do projeto:</p>                  
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Quem fez</th>
-        <th>O que fez</th>
+        <th>Integrante da Equipe</th>
+        <th>Atividades</th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +18,15 @@
         <td>Ana Cecília</td>
         <td>
 	    	<ul class="circle">
-	        	<li></li>
+	        	<li>Escolha da linguagem, framework de persistência e SGBD</li>
+            <li>Estudo do Framework Lavavel e ORM Eloquent</li>
+            <li>Configuração do Ambiente de Desenvolvimento</li>
+            <li>Configuração da base de dados</li>
+            <li>Realização da atividade de nivelamento</li>
+            <li>Criação da modelagem conconceitual e do molego lógico. </li>
+            <li>Implementação da persistência com o mapeamento objeto-relacional.</li>
+            <li>Implementação da interface web Cliente/Endereço e CRUD com controle de transação.</li>
+            <li>Povoamento do banco de dados.</li>
 			</ul>
         </td>
       </tr>
@@ -26,10 +34,15 @@
         <td>Stephanie Lima</td>
 	    <td>
 	    	<ul class="circle">
-	        	<li>Criação do Site</li>
+	        	<li>Escolha da linguagem, framework de persistência e SGBD</li>
+            <li>Criação do Site e do ambiente de versionamento</li>
 	        	<li>Configuração do Ambiente de Desenvolvimento</li>
 	        	<li>Configuração da base de dados</li>
-	        	<li>Participação na criação da modelagem lógica e esquema conceitual. </li>
+            <li>Realização da atividade de nivelamento</li>
+	        	<li>Criação da modelagem conconceitual e do molego lógico. </li>
+            <li>Implementação da persistência com o mapeamento objeto-relacional.</li>
+            <li>Implementação da interface web Cliente/Endereço e CRUD com controle de transação.</li>
+            <li>Povoamento do banco de dados.</li>
 			</ul>
         </td>
       </tr>
@@ -37,7 +50,15 @@
         <td>Thamires Asenate</td>
         <td>
 	    	<ul class="circle">
-	        	<li></li>
+	        	<li>Escolha da linguagem, framework de persistência e SGBD</li>
+            <li>Estudo do Framework Lavavel e ORM Eloquent</li>
+            <li>Configuração do Ambiente de Desenvolvimento</li>
+            <li>Configuração da base de dados</li>
+            <li>Realização da atividade de nivelamento</li>
+            <li>Criação da modelagem conconceitual e do molego lógico. </li>
+            <li>Implementação da persistência com o mapeamento objeto-relacional.</li>
+            <li>Implementação da interface web Cliente/Endereço e CRUD com controle de transação.</li>
+            <li>Povoamento do banco de dados.</li>
 			</ul>
         </td>
       </tr>
@@ -46,3 +67,8 @@
 </div>
 </form>
 @stop('content')
+
+
+
+
+
