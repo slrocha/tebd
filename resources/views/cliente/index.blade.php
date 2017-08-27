@@ -39,8 +39,8 @@
     @endif   
     <td><a href="{{route('cliente.edit', $cliente->id)}}" class="btn btn-warning">Editar</a></td> 
      <td>
-     <form class="form-horizontal" method="DELETE" id ="form-delete-destroy-'.$cliente->id" action="{{ route('cliente.destroy', $cliente->id) }}">
-     	<a href="{{ route('cliente.destroy', $cliente->id) }}" data-form="cliente-{{ $cliente->id }}" class=" data-delete btn btn-danger">Excluir</a>
+     <form class="form-horizontal" method="get" action="{{ URL::to('cliente/'.$cliente->id.'/destroy') }}">
+     	<button type="submit" class=" data-delete btn btn-danger">Excluir</a>
      </form>
      </td> 
       </tr>
@@ -49,16 +49,4 @@
   </table> 
 </div>
 @stop('content')
-
-
-
-<script type="text/javascript">
-$(function () {
-  $('.data-delete').on('click', function (e) {
-    if (!confirm('Are you sure you want to delete?')) return;
-    e.preventDefault();
-    $('#form-delete-' + $(this).data('form')).submit();
-  });
-});		
-</script>
 

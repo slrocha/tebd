@@ -37,4 +37,5 @@ Route::resource('programacao', 'ProgramacaoController');
 Route::resource('reserva', 'ReservaBilheteController');
 Route::resource('teatro', 'TeatroController');
 
+Route::get('cliente/{id}/destroy', 'CLienteController@destroy');
 

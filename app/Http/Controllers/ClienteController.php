@@ -14,7 +14,7 @@ class ClienteController extends Controller
    
     public function index()
     {
-        $clientes = Cliente::all();
+        $clientes = Cliente::paginate(15);
         return view('cliente.index', ['clientes' => $clientes]);
     }
 
@@ -119,6 +119,32 @@ class ClienteController extends Controller
  
     public function destroy($id)
     {
-        dd($id);
+      
+        DB::beginTransaction();
+
+        try{
+
+            $cliente = Cliente::findOrFail($id);
+            $endereco_id = $cliente->endereco_id;
+            $endereco = Endereco::findOrFail($endereco_id);
+
+            if($cliente->delete()){
+                $endereco->delete();
+
+                DB::commit();
+                Session::flash('status', 'Cliente Excluído!');
+                return Redirect::to('cliente');
+            }
+            else{
+                DB::rollback();
+                Session::flash('status', 'Cliente não Excluído!');
+                return Redirect::to('cliente');
+            }
+
+        }catch(\Exception $e){
+            DB::rollback();
+            Session::flash('status', 'Cliente não Encontrado!');
+            return Redirect::to('cliente');
+        }
     }
 }
