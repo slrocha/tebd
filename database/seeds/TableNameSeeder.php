@@ -24,14 +24,14 @@ class TableNameSeeder extends Seeder
     	App\TeatroPrograPoltro::truncate();
 
         factory(App\Teatro::class, 1)->create();
-        factory(App\Endereco::class, 500000)->create();
-        factory(App\Cliente::class, 500000)->create();
-        factory(App\Poltrona::class, 500000)->create();
-        factory(App\Espetaculo::class, 500000)->create();
-        factory(App\Programacao::class, 500000)->create();
-        factory(App\Bilhete::class, 500000)->create();
-        factory(App\ReservaBilhete::class, 500000)->create();
-        factory(App\TeatroPrograPoltro::class, 500000)->create();
+        factory(App\Endereco::class, 100000)->create();
+        factory(App\Cliente::class, 100000)->create();
+        factory(App\Poltrona::class, 100000)->create();
+        factory(App\Espetaculo::class, 100000)->create();
+        factory(App\Programacao::class, 100000)->create();
+        factory(App\Bilhete::class, 100000)->create();
+        factory(App\ReservaBilhete::class, 100000)->create();
+        factory(App\TeatroPrograPoltro::class, 100000)->create();
 
     }
 }
