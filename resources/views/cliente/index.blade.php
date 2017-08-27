@@ -38,29 +38,27 @@
         <td>Não</td>
     @endif   
     <td><a href="{{route('cliente.edit', $cliente->id)}}" class="btn btn-warning">Editar</a></td> 
-     <td><a href="{{ URL::to('cliente/destroy/'. $cliente->id) }}" data-method="delete" data-toggle="modal" data-target="#myModal" class="btn btn-danger">Excluir</a></td> 
+     <td>
+     <form class="form-horizontal" method="DELETE" id ="form-delete-destroy-'.$cliente->id" action="{{ route('cliente.destroy', $cliente->id) }}">
+     	<a href="{{ route('cliente.destroy', $cliente->id) }}" data-form="cliente-{{ $cliente->id }}" class=" data-delete btn btn-danger">Excluir</a>
+     </form>
+     </td> 
       </tr>
     </tbody>
     @endforeach
-  </table>
-
-   <!-- Modal -->
-<form class="form-horizontal" method="DELETE" action="{{ route('cliente.destroy', $cliente->id) }}">
-<input name="_method" type="hidden" value="DELETE">
-<div class="modal fade" id="myModal" role="dialog">
-<div class="modal-dialog modal-sm">    
-  <!-- Modal content-->
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
-    </div>
-    <div class="modal-body">
-      <p>Deseja excluir?</p>
-    </div>
-    <div class="modal-footer">
-      <button type="submit" class="btn btn-danger" data-dismiss="modal">Excluir</button>
-    </div>
-  </div>
-</form> 
+  </table> 
 </div>
 @stop('content')
+
+
+
+<script type="text/javascript">
+$(function () {
+  $('.data-delete').on('click', function (e) {
+    if (!confirm('Are you sure you want to delete?')) return;
+    e.preventDefault();
+    $('#form-delete-' + $(this).data('form')).submit();
+  });
+});		
+</script>
+
