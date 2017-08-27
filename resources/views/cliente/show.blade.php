@@ -1,6 +1,11 @@
 
 @extends('layouts.cabecalho')
 @section('content')
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
   <form class="form-horizontal" method="#" action="#">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     

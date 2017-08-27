@@ -1,6 +1,11 @@
 
 @extends('layouts.cabecalho')
 @section('content')
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
 
 <div class="container">
   <h2>Cliente</h2>

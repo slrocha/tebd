@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 use App\Endereco;
 use App\Cliente;
 use Illuminate\Support\Facades\DB;
-// use App\Http\Requests\ClienteStoreRequest;
-
-
+use Session;
+use Illuminate\Support\Facades\Redirect;
 
 class ClienteController extends Controller
 {
@@ -73,7 +72,8 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($id);
         $endereco = $cliente->endereco()->get();
-        return view('cliente.edit', ['cliente' => $cliente, 'enderecos' => $endereco]);    }
+        return view('cliente.edit', ['cliente' => $cliente, 'enderecos' => $endereco]);   
+    }
 
    
     public function update(Request $request, $id)
@@ -83,7 +83,7 @@ class ClienteController extends Controller
         $input = $request->all();
         $endereco = false;
         $cliente = false;
-        $endereco_id = $input['Cliente']['endereco_id'];
+        $endereco_id = $input['Endereco']['endereco_id'];
         DB::beginTransaction();
 
         try {
@@ -94,24 +94,23 @@ class ClienteController extends Controller
             $endereco = true;
 
             if ($endereco != false){
-                $cliente = new Cliente($id);
+                $cliente = Cliente::find($id);
                 $cliente->fill($input['Cliente']);
                 $cliente->save();
-                
-            DB::commit();
-            return redirect ('cliente.show', ['cliente_id' => $cliente_id]);
 
+            DB::commit();
+                Session::flash('status', 'Cliente Atualizado!');
+                return Redirect::to('cliente');
             }else {
-                return redirect ('cliente/edit', $id)->with('status', 'Cliente não atualizado.');
+                return view ('cliente.edit',['cliente_id' =>$id])->with('status', 'Cliente não atualizado.');
             }
 
         } catch (\Exception $e) {
             DB::rollback();
-            return redirect ('cliente/create')->with('status', 'Cadastro não pode ser concluído');
+            return redirect ('cliente.edit', $id);
         }
 
-    }
-    
+    }    
 
  
     public function destroy($id)

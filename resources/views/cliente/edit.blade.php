@@ -1,6 +1,11 @@
 
 @extends('layouts.cabecalho')
 @section('content')
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
   <form class="form-horizontal" method="post" action="{!!URL::route('cliente.update', $cliente->id)!!}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input name="_method" type="hidden" value="PUT">
