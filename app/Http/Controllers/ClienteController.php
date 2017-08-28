@@ -60,6 +60,7 @@ class ClienteController extends Controller
     public function show($id)
     {
         $cliente = Cliente::find($id);
+        // $endereco = $cliente->endereco()->get();
         $endereco = Endereco::where('id', $cliente->endereco_id)->get();
         foreach ($endereco as $key => $value) {
             return view('cliente.show', ['cliente' => $cliente, 'endereco' => $value]);

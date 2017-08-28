@@ -13,15 +13,15 @@ class TableNameSeeder extends Seeder
      */
     public function run()
     {
-    	App\Teatro::truncate();
-    	App\Endereco::truncate();
-    	App\Cliente::truncate();
-    	App\Poltrona::truncate();
-    	App\Espetaculo::truncate();
-    	App\Programacao::truncate();
-    	App\Bilhete::truncate();
-    	App\ReservaBilhete::truncate();
-    	App\TeatroPrograPoltro::truncate();
+    	// App\Teatro::truncate();
+    	// App\Endereco::truncate();
+    	// App\Cliente::truncate();
+    	// App\Poltrona::truncate();
+    	// App\Espetaculo::truncate();
+    	// App\Programacao::truncate();
+    	// App\Bilhete::truncate();
+    	// App\ReservaBilhete::truncate();
+    	// App\TeatroPrograPoltro::truncate();
 
         factory(App\Teatro::class, 1)->create();
         factory(App\Endereco::class, 100000)->create();

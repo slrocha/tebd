@@ -26,20 +26,16 @@
 
   <div class="well">
     <strong>Interface Web</strong></br>
-    <p align="justify"> A interface Web de cliente e endereço foi desenvolvida para aplicação das ténicas de controle de transação. Foi implementado o CRUD de cliente. (falar sobre comandos especiais utilizados). 
+    <p align="justify"> A interface Web de cliente e endereço foi desenvolvida para aplicação das ténicas de controle de transação. Foi implementado o CRUD de cliente.
   </p>
     <a href="{{ URL::to('cliente') }}" class="btn btn-warning">Acessar Interface</a>
   </div>
 
    <div class="well">
     <strong>Povoamento do Banco</strong></br>
-    <p align="justify">Povoamento. (SEEDS) 
+    <p align="justify">Povoamento
+      Para o povoamento do banco de dados, foi utilizado as factories que permite de uma forma extremamente simples, adicionar dados de teste em aplicações. Para chamar essas factories foram utilizadas as seeds através da função call que executa as factorys que foram criadas. Os dados foram gerados utilizando uma biblioteca do PHP chamada <a href="https://github.com/fzaninotto/Faker">Faker</a>.
   </p>
-  </div>
-
-  <div class="well">
-    <strong>Slide da Primeira Apresentação para download</strong></br>
-    <p align="justify">Para acessar os slides da primeira apresentação da equipe clique <a href="https://github.com/slrocha/tebd/blob/master/documentos/NewModeloLogico.png">Apresentação Etapa 1</a>.</p>
   </div>
 </div>
 </form>
