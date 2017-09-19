@@ -7,6 +7,7 @@ use App\Endereco;
 use App\Cliente;
 use Illuminate\Support\Facades\DB;
 use Session;
+use Response;
 use Illuminate\Support\Facades\Redirect;
 
 class ClienteController extends Controller
@@ -147,5 +148,12 @@ class ClienteController extends Controller
             Session::flash('status', 'Cliente não Encontrado!');
             return Redirect::to('cliente');
         }
+    }
+
+    public function gerarJson(){
+
+        $clientes = Cliente::paginate(15);
+        //$cliente = file_put_contents("file.json", json_encode($clientes));
+        return Response::json($clientes);
     }
 }

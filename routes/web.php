@@ -30,6 +30,7 @@ Route::resource('informacao', 'InformacaoController');
 
 Route::resource('bilhete', 'BilheteController');
 Route::resource('cliente', 'CLienteController');
+Route::any('gerarJson', 'ClienteController@gerarJson');
 Route::resource('endereco', 'EnderecoController');
 Route::resource('espetaculo', 'EspetaculoController');
 Route::resource('poltrona', 'PoltronaController');
