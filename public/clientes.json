@@ -1,0 +1,112 @@
+"data":[
+	{
+		"id" : 6,
+		"nome" : "Ezekiel Ratke",
+		"cpf" : "011.922.771-06",
+		"dt_nascimento" : "1943-12-09",
+		"telefone" : "(234) 894-4940",
+		"is_vip" : 0,
+		"endereco_id" : 100006,
+		"created_at" : "2017-08-27 16:21:12",
+		"updated_at" : "2017-08-27 16:21:12"
+	},
+	{
+		"id" : 7,
+		"nome" : "Cicero Grant",
+		"cpf" : "755.091.102-82",
+		"dt_nascimento" : "1966-03-01",
+		"telefone" : "703.371.5544 x72759",
+		"is_vip" : 0,
+		"endereco_id" : 100007,
+		"created_at" : "2017-08-27 16:21:12",
+		"updated_at" : "2017-08-27 16:21:12"
+	},
+	{
+		"id" : 8,
+		"nome" : "Estefania Kuhic DDS",
+		"cpf" : "874.020.419-25",
+		"dt_nascimento" : "1983-09-02",
+		"telefone" : "589.318.6307 x28601",
+		"is_vip" : 0,
+		"endereco_id" : 100008,
+		"created_at" : "2017-08-27 16:21:12",
+		"updated_at" : "2017-08-27 16:21:12"
+	},
+	{
+		"id" : 9,
+		"nome" : "Turner Wehner",
+		"cpf" : "378.481.655-27",
+		"dt_nascimento" : "1939-02-26",
+		"telefone" : "1-652-469-6087 x877",
+		"is_vip" : 0,
+		"endereco_id" : 100009,
+		"created_at" : "2017-08-27 16:21:12",
+		"updated_at" : "2017-08-27 16:21:12"
+	},
+	{
+		"id" : 10,
+		"nome" : "Makenna Koch",
+		"cpf" : "388.884.923-89",
+		"dt_nascimento" : "1947-12-19",
+		"telefone" : "(402) 939-5127",
+		"is_vip" : 1,
+		"endereco_id" : 100010,
+		"created_at" : "2017-08-27 16:21:12",
+		"updated_at" : "2017-08-27 16:21:12"
+	},
+	{
+		"id" : 11,
+		"nome" : "Gia Ward",
+		"cpf" : "137.119.731-80",
+		"dt_nascimento" : "1962-06-19",
+		"telefone" : "204-701-6860 x84435",
+		"is_vip" : 0,
+		"endereco_id" : 100011,
+		"created_at" : "2017-08-27 16:21:12",
+		"updated_at" : "2017-08-27 16:21:12"
+	},
+	{
+		"id" : 12,
+		"nome" : "Roxanne Ebert DDS",
+		"cpf" : "365.733.613-95",
+		"dt_nascimento" : "1956-01-20",
+		"telefone" : "+16566684109",
+		"is_vip" : 1,
+		"endereco_id" : 100012,
+		"created_at" : "2017-08-27 16:21:12",
+		"updated_at" : "2017-08-27 16:21:12"
+	},
+	{
+		"id" : 13,
+		"nome" : "Dr. Dock Wolff II",
+		"cpf" : "800.258.323-30",
+		"dt_nascimento" : "1952-05-13",
+		"telefone" : "(737) 965-6503",
+		"is_vip" : 1,
+		"endereco_id" : 100013,
+		"created_at" : "2017-08-27 16:21:12",
+		"updated_at" : "2017-08-27 16:21:12"
+	},
+	{
+		"id" : 14,
+		"nome" : "Morgan Shields",
+		"cpf" : "893.232.526-29",
+		"dt_nascimento" : "1921-02-25",
+		"telefone" : "(891) 835-4530 x4928",
+		"is_vip" : 0,
+		"endereco_id" : 100014,
+		"created_at" : "2017-08-27 16:21:12",
+		"updated_at" : "2017-08-27 16:21:12"
+	},
+	{
+		"id" : 15,
+		"nome" : "Lyric Blick",
+		"cpf" : "527.743.933-44",
+		"dt_nascimento" : "1955-08-23",
+		"telefone" : "(380) 452-7772",
+		"is_vip" : 0,
+		"endereco_id" : 100015,
+		"created_at" : "2017-08-27 16:21:12",
+		"updated_at" : "2017-08-27 16:21:12"
+	}
+]
