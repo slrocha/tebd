@@ -27,4 +27,13 @@ class InformacaoController extends Controller
         return view ('informacao.estrategias');
     }
 
+    public function documentacao_p1()
+    {
+        return view ('informacao.documentacaop1');
     }
+
+    public function estrategia_p1()
+    {
+        return view ('informacao.estrategiap1');
+    }
+}

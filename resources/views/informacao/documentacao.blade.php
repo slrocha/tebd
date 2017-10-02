@@ -3,7 +3,7 @@
 <form class="form-horizontal" method="#">
  <div class="container">
   <div class="jumbotron">
-    <h2>Documentação do Projeto</h2> </br>
+    <h2>Estratégias Utilizadas para Concepção da Etapa 1</h2> </br>
   </div>
 
    <div class="well">

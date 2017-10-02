@@ -25,7 +25,9 @@ Route::resource('item', 'ItemController');
 //referentes a tela de informações
 Route::get('informacao/atividades', 'InformacaoController@atividades')->name('informacao.atividades');
 Route::get('informacao/documentacao', 'InformacaoController@documentacao')->name('informacao.documentacao');
+Route::get('informacao/documentacaop1', 'InformacaoController@documentacao_p1')->name('informacao.documentacaop1');
 Route::get('informacao/estrategias', 'InformacaoController@estrategias')->name('informacao.estrategias');
+Route::get('informacao/estrategiap1', 'InformacaoController@estrategia_p1')->name('informacao.estrategiap1');
 Route::resource('informacao', 'InformacaoController');
 
 Route::resource('bilhete', 'BilheteController');
