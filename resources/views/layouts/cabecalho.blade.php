@@ -38,7 +38,7 @@
           <ul class="dropdown-menu">
             <li><a href="{{ URL::to('informacao/documentacao') }}">Etapa 1</a></li>
             <li><a href="{{ URL::to('informacao/documentacaop1') }}">Etapa 2</a></li>
-            <li><a href="#">Etapa 3</a></li>
+            <li><a href="{{ URL::to('informacao/documentacaop2') }}">Etapa 3</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -47,7 +47,7 @@
           <ul class="dropdown-menu">
             <li><a href="{{ URL::to('informacao/estrategias') }}">Etapa 1</a></li>
             <li><a href="{{ URL::to('informacao/estrategiap1') }}">Etapa 2</a></li>
-            <li><a href="#">Etapa 3</a></li>
+            <li><a href="{{ URL::to('informacao/estrategiap2') }}">Etapa 3</a></li>
           </ul>
         </li>
         <li class="dropdown">
