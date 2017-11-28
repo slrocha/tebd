@@ -156,7 +156,7 @@
 </div>
 <div class="well">
   	<p align="justify"> 
-    Apache disponivel em: <a href="https://www.apachelounge.com/download/">Apache Downloads</a>.
+    O projeto do SpagoBI está disponivel em: <a href="https://github.com/AnaCecilia65/tebd-spagobi">Modelo Teatro</a>.
     </br>
     </p>
   </div>
