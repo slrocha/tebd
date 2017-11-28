@@ -154,10 +154,12 @@
   	<p align="justify">Para a criação do indicador, um novo modelo lógico foi criado, onde o mesmo é definido como Star Schema. Nele criaram-se o DW, onde após a criação, foi necessário implementar um script em php para povoamento nesse modelo. O código php e o DER estão disponíveis no <a href="#"></a>GitHub.</p>
 </p>
 </div>
-
 <div class="well">
-<p align="justify"> O projeto do SpagoBI está disponível em: <a href="https://github.com/AnaCecilia65/tebd-spagobi"></a>.
-  </p>
-</div>
+  	<strong>Softwares e Frameworks necessários para concepção do Projeto</strong> </br>
+  	<p align="justify"> 
+    Apache disponivel em: <a href="https://www.apachelounge.com/download/">Apache Downloads</a>.
+    </br>
+    </p>
+  </div>
 </div>  
 </form>
