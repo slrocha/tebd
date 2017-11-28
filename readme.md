@@ -125,7 +125,6 @@
   <div class="well">
   	<strong>JSON - JavaScript Object Notation</strong></br>
   	<p align="justify"> JSON (JavaScript Object Notation) é uma formatação leve de troca de dados. É muito utilizado, pois além da leveza,  ele é estruturado em uma coleção de pares nome/valor. Em várias linguagens, isto é caracterizado como um object, record, struct, dicionário, hash table, keyed list, ou arrays associativas, além de apresentar uma lista ordenada de valores, caracterixado em muitas linguagens como um array, vetor, lista ou sequência. Para obter mais informações, acesse: <a href="http://www.json.org/json-pt.html">JSON</a>.
-    O arquivo JSON do nosso projeto está disponível em: <a href="https://github.com/slrocha/tebd/blob/master/composer.lock"> e <a href="https://github.com/slrocha/tebd/blob/master/composer.json">
     </p>
   </div>
 
