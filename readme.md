@@ -155,5 +155,9 @@
 </p>
 </div>
 
+<div class="well">
+<p align="justify"> O projeto do SpagoBI está disponível em: <a href="https://github.com/AnaCecilia65/tebd-spagobi"></a>.
+  </p>
+</div>
 </div>  
 </form>
