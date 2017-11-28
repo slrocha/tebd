@@ -155,7 +155,6 @@
 </p>
 </div>
 <div class="well">
-  	<strong>Softwares e Frameworks necessários para concepção do Projeto</strong> </br>
   	<p align="justify"> 
     Apache disponivel em: <a href="https://www.apachelounge.com/download/">Apache Downloads</a>.
     </br>
