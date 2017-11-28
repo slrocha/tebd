@@ -137,6 +137,13 @@
 </div>  
 </form>
 
+<div class="well">
+  	<p align="justify"> 
+    O projeto do Android Studio está disponivel em: <a href="https://github.com/slrocha/tebd_android">Projeto Android Teatro</a>.
+    </br>
+    </p>
+  </div>
+
 <form class="form-horizontal" method="#">
  <div class="container">
   <div class="jumbotron">
