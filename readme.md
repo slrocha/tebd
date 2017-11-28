@@ -143,9 +143,15 @@
     <h2>Estratégias Utilizadas para Concepção da Etapa 3</h2> </br>
   </div>
 
+  <div class="well">
+    <strong>Web Semântica</strong></br>
+    <p align="justify">A idéia de Web Semântica surgiu em 2001, após a publicação de um artigo através da revista Scientific American denominado “Web Semântica: um novo formato de conteúdo para a Web que tem significado para computadores vai iniciar uma revolução de novas possibilidades.”. Este artigo foi elaborado por Tim Berners-Lee, James Hendler e Ora Lassila. A Web Semântica tem como um de seus principais objetivos tornar a Web mais acessível em nível de informações. Esta idéia surge para facilitar a vida dos usuários, ou seja, em princípio não deve haver mudanças a nível visual nas páginas, mas sim na forma como o conteúdo está organizado e apresentado em termos de código.
+    </p>
+  </div> 
+
    <div class="well">
     <strong>Apache Jena</strong></br>
-    <p align="justify">O Apache Jena é um framework de código aberto para implementar Web Semântica em Java. Ele fornece uma API para extrair dados e escrever em gráficos RDF. Os gráficos são representados como um "modelo" abstrato. Um modelo pode ser fornecido com dados de arquivos, bancos de dados, URLs ou uma combinação destes. Um modelo também pode ser consultado através do SPARQL 1.1. . Para saber mais, acesse o  <a href="https://jena.apache.org/">Apache Jena</a>
+    <p align="justify"> Para realizar a atividade de nivelamento foi utilizado o getting started do Apache Jena. O Apache Jena é um framework de código aberto para implementar Web Semântica em Java. Ele fornece uma API para extrair dados e escrever em gráficos RDF. Os gráficos são representados como um "modelo" abstrato. Um modelo pode ser fornecido com dados de arquivos, bancos de dados, URLs ou uma combinação destes. Um modelo também pode ser consultado através do SPARQL. O tutorial do Apache Jena pode ser encontrado em <a href="https://jena.apache.org/getting_started//">Getting Started com Apache Jena</a>
     </p>
   </div> 
 <div class="well">
