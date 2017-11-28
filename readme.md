@@ -149,7 +149,7 @@
   </div> 
 <div class="well">
   	<p align="justify"> 
-    O projeto do SpagoBI está disponivel em: <a href="https://github.com/AnaCecilia65/tebd-spagobi">Modelo Teatro</a>.
+    O projeto do Apache Jena está disponivel em: <a href="https://github.com/slrocha/jena_apache">Projeto Teatro</a>.
     </br>
     </p>
   </div>
