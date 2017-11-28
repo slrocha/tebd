@@ -145,7 +145,8 @@
 
    <div class="well">
     <strong>Apache Jena</strong></br>
-    <p align="justify">Com o SpagoBi, temos uma ferramenta, ou melhor um software para o desenvolvimento de projeto de BI em ambientes integrados. O SpagoBI cobre todo o leque de necessidades analíticas: emissão de relatórios estáticos, analise dinâmica e multidimensional, busca por informações escondidas através de técnicas de Data Mining (busca de dados), e monitoramento do desempenho da empresa através de painéis. Para saber mais, acesse o  <a href="https://analistati.com/spagobi-plataforma-de-bi-livre/">Analista TI</a>, um site onde especifica um algumas características da ferramenta</p>
+    <p align="justify">O Apache Jena é um framework de código aberto para implementar Web Semântica em Java. Ele fornece uma API para extrair dados e escrever em gráficos RDF. Os gráficos são representados como um "modelo" abstrato. Um modelo pode ser fornecido com dados de arquivos, bancos de dados, URLs ou uma combinação destes. Um modelo também pode ser consultado através do SPARQL 1.1.. Para saber mais, acesse o  <a href="https://jena.apache.org/">Apache Jena</a>
+    </p>
   </div> 
 <div class="well">
   	<p align="justify"> 
