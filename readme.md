@@ -144,6 +144,26 @@
   </div>
 
    <div class="well">
+    <strong>Apache Jena</strong></br>
+    <p align="justify">Com o SpagoBi, temos uma ferramenta, ou melhor um software para o desenvolvimento de projeto de BI em ambientes integrados. O SpagoBI cobre todo o leque de necessidades analíticas: emissão de relatórios estáticos, analise dinâmica e multidimensional, busca por informações escondidas através de técnicas de Data Mining (busca de dados), e monitoramento do desempenho da empresa através de painéis. Para saber mais, acesse o  <a href="https://analistati.com/spagobi-plataforma-de-bi-livre/">Analista TI</a>, um site onde especifica um algumas características da ferramenta</p>
+  </div> 
+<div class="well">
+  	<p align="justify"> 
+    O projeto do SpagoBI está disponivel em: <a href="https://github.com/AnaCecilia65/tebd-spagobi">Modelo Teatro</a>.
+    </br>
+    </p>
+  </div>
+</div>  
+</form>
+
+
+<form class="form-horizontal" method="#">
+ <div class="container">
+  <div class="jumbotron">
+    <h2>Estratégias Utilizadas para Concepção da Etapa 4</h2> </br>
+  </div>
+
+   <div class="well">
     <strong>Spago BI</strong></br>
     <p align="justify">Com o SpagoBi, temos uma ferramenta, ou melhor um software para o desenvolvimento de projeto de BI em ambientes integrados. O SpagoBI cobre todo o leque de necessidades analíticas: emissão de relatórios estáticos, analise dinâmica e multidimensional, busca por informações escondidas através de técnicas de Data Mining (busca de dados), e monitoramento do desempenho da empresa através de painéis. Para saber mais, acesse o  <a href="https://analistati.com/spagobi-plataforma-de-bi-livre/">Analista TI</a>, um site onde especifica um algumas características da ferramenta</p>
     <p align="justify">Para o desenvolvimento desta etapa, foi nencessário fazer um nivelamento usando o Data Warehouse disponibilizado pelo professor e seguir um tutorial ministrado por Peterson, disponível no Canal dele no Youtube. Foram definidas dimensões e fatos no DW e criado um indicador que tem como objetivo mostrar as principais informações referentes aos dados que foram mensurados na tabela que foi criada como fato e depois virá a ser um cubo. Para obter mais informações sobre o software utilizado para fazer o nivelamento e atividade pedida pelo professor, acesse <a href="http://www.spagobi.org/"></a>Spago BI.</p>
